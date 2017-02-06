@@ -1,0 +1,23 @@
+language: go
+
+go:
+  - 1.7
+
+matrix:
+  include:
+  - os: linux
+    dist: precise
+    sudo: false
+  - os: linux
+    dist: trusty
+    sudo: false
+
+branches:
+  only:
+    - master
+
+install:
+  - true
+
+script:
+  - echo "hello"
