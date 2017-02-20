@@ -1,23 +1,23 @@
-language: go
-
-go: 1.7
-
-matrix:
-  include:
-  - os: linux
-    dist: precise
-    sudo: false
-  - os: linux
-    dist: trusty
-    sudo: false
-
-branches:
-  only:
-    - master
+language: ruby
+sudo: false
+dist: precise
 
 install:
-  - true
+- true
 
 script:
-  - echo "hello"
+- echo $SUITE
+- if [ "${SUITE}" = "cucumber" ]; then travis_terminate 1; fi # forcing a failure for this environment
 
+rvm:
+- 2.3.3
+
+env:
+  matrix:
+    - SUITE=cucumber CREATE_DB=true RAILS_ENV=cucumber
+    - SUITE="rspec --tag type:model" CREATE_DB=true
+  
+matrix:
+  allow_failures:
+  - env: SUITE=cucumber CREATE_DB=true RAILS_ENV=cucumber
+    rvm: 2.3.3
