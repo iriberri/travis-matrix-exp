@@ -13,7 +13,7 @@ matrix:
 
 install:
 - if [ "${NEO4J_VERSION}" = "3.0.6" ]; then sleep 60; fi
-- if [ "${NEO4J_VERSION}" = "2.3.9" ]; then sleep 180; fi
-- if [ "${NEO4J_VERSION}" = "2.3.sss9" ]; then sleep 65; fi
-- if [ "${NEO4J_VERSION}" = "2.dd3.9" ]; then sleep 10; fi
+- if [ "${NEO4J_VERSION}" = "2.3.9" ]; then sleep 10; fi
+- if [ "${NEO4J_VERSION}" = "2.3.sss9" ]; then sleep 180; fi
+- if [ "${NEO4J_VERSION}" = "2.dd3.9" ]; then sleep 200; fi
 - travis_terminate 1
