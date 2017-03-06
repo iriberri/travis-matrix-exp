@@ -1,10 +1,11 @@
 env:
 - SLEEP=30
-- SLEEP=25
-- SLEEP=35
-matrix:
-  fast_finish: true
-script: sleep $SLEEP && /bin/false
+
+script: echo "hola"
 deploy:
+  provider: releases
+  file_glob: true
+  file: .travis.yml
+  skip_cleanup: true
   api_key:
     secure: 2I93PtQ6FCXul4hM8gXCi4Nej0/PdDMjxuCj2w6oQsCuQinX84+uJTub7ny6thUu8wCZMr6VCHMSoGUGpx1VBk7IV7EiYVM5QszY2+qm6L8JP+8otbQfHteyKBd2nViyxtN7lWO8W4oTD67RxuZdNv/NIP6kvMuim1BTSbAmsU9xrptoWWCUIK/CzcXEhkPNGXt4AIsPvrXsqZhYUYCKkmibaty0I/MFvQCVweoev/x2ibchtcju+5JaXlwXFkuq0vulgQWvFIL+cr6B2Mct6N2RBVEz+q8q9IHXETUY9IfeDZfbvR0YS6uw4PWBZvyg2LMGhaaR13iX3Z5TsdryhcQo+2Y7gWgMiXse31mSv2aupe90cxAIp8bTzewk/VypoFWjjPwRYehP1bD554PRV9xvrHCfP2tosd72RGpEP7KgBwp5qZoxXA2Ro/CiR3i4cR8tspYqBeW21NpFS3l+T0ALwHG60uE4asVZoTBjGfIlh8pvTKMsCWMkPR74lFFbLHSPfPgqRWCAk8luPb/G+/y9R/reDz7xghuMQVBlVoS4QCyGZH1iazCIwf86SFGT88ob7xuwWtWraILbtNODp1cpca0glkS0nq9UoEGxCzLOUf9u+utLDrL9QkS5BfTDBd8/otlyw/rmRAx37cw5sQZtWKyULo01ICBNGr5vDV4=
